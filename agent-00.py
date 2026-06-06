@@ -1,5 +1,4 @@
 import os
-import re
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -17,10 +16,8 @@ def main():
         {
             "role": "system",
             "content": (
-                "You are an AI assistant with access to the following tools: "
-                "read_file(path), list_files(path), edit_file(path, old_str, new_str). "
-                "If you need to use a tool, reply ONLY with the tool call in the format: tool_name(args). "
-                "Do not explain, just output the tool call. Wait for the tool result before continuing the conversation."
+                "You are a helpful AI assistant. "
+                "Offer all the help you reasonably can and decline when you cannot offer any help."
             )
         }
     ]
