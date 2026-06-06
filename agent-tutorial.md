@@ -1,8 +1,8 @@
 # How to Build a Python AI Agent
 
-> This guide is inspired by [How to Build an Agent](https://ampcode.com/notes/how-to-build-an-agent) by Thorsten Ball. The original builds a code-editing agent in Go with Anthropic. This version rebuilds the same idea in Python with the HuggingFace Inference API and grows the agent in small stages.
+> This guide is inspired by [How to Build an Agent](https://ampcode.com/notes/how-to-build-an-agent) by Thorsten Ball. The original builds a code-editing agent in Go with Anthropic's Claude. This version rebuilds the same idea in Python (because it's more popular) with the HuggingFace Inference API (because it's virtually free to start) and grows the agent in small stages.
 
-The point of this tutorial is not that agents are magic. The point is the opposite: an agent is an LLM, a loop, and some tools.
+The point of this tutorial is to clearly show that an agent is an LLM, a loop, and some tools.
 
 We will build that loop in stages:
 
@@ -334,6 +334,12 @@ You: Read agent-00.py and explain the control flow.
 
 At this point the model can inspect your project. It is no longer just answering from its training data.
 
+You can also try:
+
+```text
+You: Read the files in the test-files folder and tell me what they say.
+```
+
 > [!WARNING]
 > `edit_file` can write to your working directory. That is useful, but it is also the first dangerous tool in this tutorial.
 >
@@ -448,9 +454,16 @@ The next natural stages are:
 - `agent-05.py`: replace text-based tool calls with provider-native tool calling
 - `agent-06.py`: add planning, task state, and a maximum tool-call budget
 
-The pattern stays the same: give the model a capability, detect when it wants to use it, execute it in ordinary Python, then return the result.
+The pattern is the same: give the model a capability, detect when it wants to use it, execute it in ordinary Python, then return the result.
 
-There is no hidden trick. The quality comes from the loop, the tool design, and the constraints you put around what the agent is allowed to do.
+The quality depends on **the loop, the tool design, and the constraints** you put around what the agent is allowed to do.
+
+>[!TIP] BIG IDEA
+>What we have built here, while basic, is already more powerful than you think!  
+>
+> Try `"Create a prime_number_generator.py"` and you will see that our little agent can already successfully generate code, and by extension, shell commands. This means it has the potential to be extended to control a computer and create any new functionality it needs!
+
+What will you build next?! 😃
 
 ---
 
