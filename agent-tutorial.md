@@ -463,6 +463,8 @@ The quality depends on **the loop, the tool design, and the constraints** you pu
 >
 > Try `"Create a prime_number_generator.py"` and you will see that our little agent can already successfully generate code, and by extension, shell commands. This means it has the potential to be extended to control a computer and create any new functionality it needs!
 
+If you prefer videos, here's one by Geoffrey Huntley, [building an agent live on stage!](https://www.youtube.com/watch?v=OR3zdu9T_as)
+
 What will you build next?! 😃
 
 ---
