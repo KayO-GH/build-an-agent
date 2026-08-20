@@ -129,7 +129,7 @@ def system_prompt():
 def run_inference(history):
     messages = [{"role": "system", "content": system_prompt()}] + history
     completion = client.chat.completions.create(
-        model="Qwen/Qwen2.5-7B-Instruct:cheapest",
+        model="Qwen/Qwen3-8B",
         messages=messages,
     )
     return completion.choices[0].message.content.strip()

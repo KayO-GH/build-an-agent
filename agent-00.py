@@ -31,7 +31,7 @@ def main():
             else:
                 messages.append({"role": turn["role"], "content": turn["content"]})
         completion = client.chat.completions.create(
-            model="Qwen/Qwen2.5-7B-Instruct:cheapest",
+            model="Qwen/Qwen3-8B",
             messages=messages,
         )
         response = completion.choices[0].message.content.strip()

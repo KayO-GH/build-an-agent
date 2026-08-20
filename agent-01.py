@@ -72,7 +72,7 @@ def parse_tool_call(text):
 
 def run_inference(history):
     completion = client.chat.completions.create(
-        model="Qwen/Qwen2.5-7B-Instruct:cheapest",
+        model="Qwen/Qwen3-8B",
         messages=history,
     )
     return completion.choices[0].message.content.strip()
